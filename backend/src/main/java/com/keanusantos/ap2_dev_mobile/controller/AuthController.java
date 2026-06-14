@@ -32,8 +32,9 @@ public class AuthController {
     public LoginResponseDTO login(@RequestBody Map<String, String> dados) {
         var senhaUsuario = new UsernamePasswordAuthenticationToken(dados.get("email"), dados.get("senha"));
         var auth = this.authenticationManager.authenticate(senhaUsuario);
-        var token = tokenService.gerarToken((Usuario) auth.getPrincipal());
-        return new LoginResponseDTO(token);
+        Usuario usuario = (Usuario) auth.getPrincipal();
+        var token = tokenService.gerarToken(usuario);
+        return new LoginResponseDTO(token, usuario);
     }
 
     @PostMapping("/register")
