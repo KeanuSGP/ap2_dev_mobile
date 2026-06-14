@@ -1,6 +1,7 @@
 package com.keanusantos.ap2_dev_mobile.controller;
 
 import com.keanusantos.ap2_dev_mobile.Config.TokenService;
+import com.keanusantos.ap2_dev_mobile.dto.LoginResponseDTO;
 import com.keanusantos.ap2_dev_mobile.entity.Usuario;
 import com.keanusantos.ap2_dev_mobile.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +29,11 @@ public class AuthController {
     private TokenService tokenService;
 
     @PostMapping("/login")
-    public String login(@RequestBody Map<String, String> dados) {
+    public LoginResponseDTO login(@RequestBody Map<String, String> dados) {
         var senhaUsuario = new UsernamePasswordAuthenticationToken(dados.get("email"), dados.get("senha"));
         var auth = this.authenticationManager.authenticate(senhaUsuario);
         var token = tokenService.gerarToken((Usuario) auth.getPrincipal());
-        return token;
+        return new LoginResponseDTO(token);
     }
 
     @PostMapping("/register")
