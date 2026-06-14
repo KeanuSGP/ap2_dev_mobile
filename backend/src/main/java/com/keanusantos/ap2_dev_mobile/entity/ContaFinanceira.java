@@ -26,7 +26,7 @@ public class ContaFinanceira {
     private Float saldo;
 
     @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Usuario usuario;
 
     @JsonIgnore
