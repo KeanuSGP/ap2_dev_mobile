@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tela_inicial">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/logoff_barra"
+            android:name="com.example.ap2_dev_mobile.logoff_barra"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            tools:layout="@layout/fragment_logoff_barra"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+       <TextView
+            android:id="@+id/bem_vindo_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bem vindo, {USUARIO}"
+            android:textSize="30dp"
+            android:textColor="@color/main"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+           />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/main"
+            app:cardCornerRadius="20sp"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/main_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                >
+                <LinearLayout
+                    android:id="@+id/visao_btn_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SALDO"
+                        android:layout_marginEnd="10dp"
+                        android:textColor="@color/white"
+                        />
+
+                    <ImageView
+                        android:id="@+id/visao_btn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ver"
+                        app:tint="@color/white"
+                        />
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/saldo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R$ 0,00"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/visao_btn_container"
+                    android:textSize="50sp"
+                    android:fontFamily="@font/rotobo_variavel"
+                    android:textFontWeight="500"
+                    android:textColor="@color/white"
+                    android:paddingBottom="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/saldo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:gravity="center"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/receita_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RECEITAS (MES/ANO)"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/receitas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="R$ 0,00"
+                            android:background="@drawable/receita_fundo"
+                            android:padding="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="40dp"
+                            />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"></Space>
+
+                    <LinearLayout
+                        android:id="@+id/despesa_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="end"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DESPESAS (MES/ANO)"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/despesas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="R$ 0,00"
+                            android:background="@drawable/despesa_fundo"
+                            android:textColor="@color/white"
+                            android:textSize="40dp"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ultimos_lancamentos_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/ultimos_lancamentos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ULTIMOS LANÇAMENTOS"
+                android:textSize="20sp"
+                android:fontFamily="@font/rotobo_variavel"
+                android:textFontWeight="500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="30dp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ultimos_lancamentos_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ultimos_lancamentos"
+
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navbar"
+        android:name="com.example.ap2_dev_mobile.navbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        tools:layout="@layout/fragment_navbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
