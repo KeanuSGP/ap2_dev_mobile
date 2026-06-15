@@ -45,7 +45,7 @@ Entidades:
 
 Um usuário cria uma conta financeira com nome e saldo -> O usuário cria categorias para suas transações -> O usuário cria transações para serem pagas em suas contas -> O usuário paga ou estorna suas transações
 
-Swagger (requer api rodando): http://localhost:8080/swagger-ui.html
+Swagger: https://ap2devmobile-production.up.railway.app/swagger-ui/index.html
 
 
 
