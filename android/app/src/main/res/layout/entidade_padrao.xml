@@ -2,9 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:layout_marginBottom="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_entidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="10dp"
+        >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card_conta_financeira"
         android:layout_width="300dp"
@@ -159,11 +168,12 @@
                 />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        app:layout_constraintStart_toEndOf="@id/card_conta_financeira"
+        app:layout_constraintStart_toEndOf="@id/card_view_entidade"
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="vertical"
         android:gravity="center"
@@ -171,6 +181,7 @@
         >
 
         <ImageView
+            android:id="@+id/editar_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/editar_icon"
@@ -178,6 +189,7 @@
             />
 
         <ImageView
+            android:id="@+id/deletar_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/deletar_icon"

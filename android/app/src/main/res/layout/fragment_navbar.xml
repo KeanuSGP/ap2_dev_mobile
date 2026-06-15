@@ -17,36 +17,108 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         >
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/inicio"
-            app:tint="@color/white"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
             android:layout_marginRight="30dp"
-            />
+            >
 
+            <ImageView
+                android:id="@+id/inicio_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/inicio"
+                app:tint="@color/white"
+                />
+
+            <View
+                android:id="@+id/inicio_indicador"
+                android:layout_width="40dp"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginRight="30dp"
+        >
         <ImageView
+            android:id="@+id/contas_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/contas"
             app:tint="@color/white"
-            android:layout_marginRight="30dp"
             />
 
+        <View
+            android:id="@+id/contas_indicador"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginRight="30dp"
+        >
         <ImageView
+            android:id="@+id/categorias_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/categorias"
             app:tint="@color/white"
-            android:layout_marginRight="30dp"
             />
 
-        <ImageView
+        <View
+            android:id="@+id/categorias_indicador"
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/lancamentos"
-            app:tint="@color/white"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:visibility="gone"
             />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginRight="30dp"
+            >
+            <ImageView
+                android:id="@+id/transacoes_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/lancamentos"
+                app:tint="@color/white"
+                />
+
+            <View
+                android:id="@+id/transacoes_indicador"
+                android:layout_width="40dp"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+
+
 
 
     </LinearLayout>

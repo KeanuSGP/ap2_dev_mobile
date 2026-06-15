@@ -1,3 +1,7 @@
 package com.example.ap2_dev_mobile.dto
 
-data class CategoriaRequest()
+import java.util.UUID
+
+data class CategoriaRequest(
+    val nome: String, val cor: String
+)

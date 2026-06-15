@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/main"
     android:padding="20dp"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,8 +26,7 @@
                 android:id="@+id/id_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="{id}"
-                android:textColor="@color/white"
+                android:text="Criar conta financeira"
                 android:gravity="center"
                 android:textSize="18sp"
                 />
@@ -37,11 +35,11 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/btn_fechar"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/fechar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             />
 
@@ -64,19 +62,16 @@
             app:layout_constraintTop_toTopOf="parent"
             >
             <TextView
-                android:id="@+id/item_header"
+                android:id="@+id/nome_conta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ITEM"
-                android:textColor="@color/white"
+                android:text="NOME"
                 />
 
-            <TextView
-                android:id="@+id/item_valor"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/conta_nome_input"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="{ITEM}"
-                android:textColor="@color/white"
                 />
         </LinearLayout>
 
@@ -90,19 +85,16 @@
             android:layout_marginTop="20dp"
             >
             <TextView
-                android:id="@+id/dt_compra_header"
+                android:id="@+id/saldo_conta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DATA DE COMPRA"
-                android:textColor="@color/white"
+                android:text="SALDO"
                 />
 
-            <TextView
-                android:id="@+id/dt_compra_valor"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/saldo_conta_input"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="{dd/MM/yyyy}"
-                android:textColor="@color/white"
                 />
         </LinearLayout>
 
@@ -119,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:cornerRadius="10dp"
         android:backgroundTint="@color/botao_formulario"
-        android:textSize="20sp"
+        android:textSize="16sp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

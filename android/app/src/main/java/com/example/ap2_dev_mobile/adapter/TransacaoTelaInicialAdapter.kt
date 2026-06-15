@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ap2_dev_mobile.R
 import com.example.ap2_dev_mobile.dto.TransacaoResumoTelaInicial
 
-class TransacaoAdapter(private val dataSet: List<TransacaoResumoTelaInicial>):
-    RecyclerView.Adapter<TransacaoAdapter.ViewHolder>() {
+class TransacaoTelaInicialAdapter(private val dataSet: List<TransacaoResumoTelaInicial>):
+    RecyclerView.Adapter<TransacaoTelaInicialAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val id: TextView
         val item: TextView
@@ -24,7 +24,7 @@ class TransacaoAdapter(private val dataSet: List<TransacaoResumoTelaInicial>):
         }
     }
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): TransacaoAdapter.ViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): TransacaoTelaInicialAdapter.ViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.lancamento_tela_inicial, viewGroup, false)
         return ViewHolder(view)
     }

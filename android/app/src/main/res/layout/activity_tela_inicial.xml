@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".tela_inicial">
 
     <LinearLayout
@@ -80,7 +81,7 @@
                     android:id="@+id/saldo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="R$ 0,00"
+                    android:text="R$ -----"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/visao_btn_container"
                     android:textSize="50sp"
@@ -107,6 +108,7 @@
                         >
 
                         <TextView
+                            android:id="@+id/receitas_mes"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="RECEITAS (MES/ANO)"
@@ -118,13 +120,14 @@
 
                         <TextView
                             android:id="@+id/receitas"
-                            android:layout_width="wrap_content"
+                            android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="R$ 0,00"
                             android:background="@drawable/receita_fundo"
                             android:padding="5dp"
                             android:textColor="@color/white"
-                            android:textSize="40dp"
+                            android:textSize="20dp"
+                            android:gravity="center"
                             />
                     </LinearLayout>
 
@@ -141,6 +144,7 @@
                         >
 
                         <TextView
+                            android:id="@+id/despesas_mes"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="DESPESAS (MES/ANO)"
@@ -151,20 +155,37 @@
 
                         <TextView
                             android:id="@+id/despesas"
-                            android:layout_width="wrap_content"
+                            android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="R$ 0,00"
                             android:background="@drawable/despesa_fundo"
                             android:textColor="@color/white"
-                            android:textSize="40dp"
+                            android:textSize="20dp"
                             android:layout_gravity="center"
                             android:padding="5dp"
+                            android:gravity="center"
                             />
                     </LinearLayout>
 
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/intentImplicita"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_container"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="CLIQUE PARA OBTER DICAS FINANCEIRAS"
+            android:gravity="center"
+            android:fontFamily="@font/rotobo_variavel"
+            android:textFontWeight="700"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:textStyle="italic"
+            android:textColor="@color/main"
+            />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ultimos_lancamentos_container"
@@ -190,6 +211,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ultimos_lancamentos"
+                android:layout_marginTop="20dp"
 
                 >
             </androidx.recyclerview.widget.RecyclerView>

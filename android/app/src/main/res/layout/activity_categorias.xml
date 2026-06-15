@@ -5,70 +5,68 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".categorias">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/logoff_barra"
+            android:name="com.example.ap2_dev_mobile.logoff_barra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:name="com.example.ap2_dev_mobile.logoff_barra"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout="@layout/fragment_logoff_barra"
-            />
+            tools:layout="@layout/fragment_logoff_barra" />
 
         <TextView
             android:id="@+id/pagina"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Categorias"
-            android:textSize="30dp"
-            android:textColor="@color/main"
             android:layout_marginTop="40dp"
-            app:layout_constraintTop_toBottomOf="@id/logoff_barra"
+            android:text="Categorias"
+            android:textColor="@color/main"
+            android:textSize="30dp"
             app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintTop_toBottomOf="@id/logoff_barra" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/criar_conta_btn"
+            android:id="@+id/criar_categoria_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:icon="@drawable/adicionar"
-            android:text="Criar Categoria"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/main"
-            app:cornerRadius="10dp"
-            android:textSize="20sp"
             android:fontFamily="@font/rotobo_variavel"
-            app:iconSize="30sp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            app:layout_constraintTop_toBottomOf="@id/pagina"
+            android:text="Criar Categoria"
+            android:textSize="20sp"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/adicionar"
+            app:iconSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="20dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/pagina" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/contas_rv"
+            android:id="@+id/categoria_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/criar_conta_btn"
             android:layout_marginTop="20dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/criar_categoria_btn" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navbar"

@@ -1,21 +1,14 @@
 package com.example.ap2_dev_mobile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [navbar.newInstance] factory method to
- * create an instance of this fragment.
- */
 class navbar : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -23,37 +16,64 @@ class navbar : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navbar, container, false)
+        val navbar = inflater.inflate(R.layout.fragment_navbar, container, false)
+        val inicio = navbar.findViewById<ImageView>(R.id.inicio_btn)
+        val inicioIndicador = navbar.findViewById<View>(R.id.inicio_indicador)
+        val conta = navbar.findViewById<ImageView>(R.id.contas_btn)
+        val contaIndicador = navbar.findViewById<View>(R.id.contas_indicador)
+        val categoria = navbar.findViewById<ImageView>(R.id.categorias_btn)
+        val categoriaIndicador = navbar.findViewById<View>(R.id.categorias_indicador)
+        val transacao = navbar.findViewById<ImageView>(R.id.transacoes_btn)
+        val transacaoIndicador = navbar.findViewById<View>(R.id.transacoes_indicador)
+
+        if (requireActivity() is tela_inicial) {
+            inicioIndicador.visibility = View.VISIBLE
+        }
+
+        if (requireActivity() is contas_financeiras) {
+            contaIndicador.visibility = View.VISIBLE
+        }
+
+        if (requireActivity() is categorias) {
+            categoriaIndicador.visibility = View.VISIBLE
+        }
+
+        if (requireActivity() is lancamentos) {
+            transacaoIndicador.visibility = View.VISIBLE
+        }
+
+        inicio.setOnClickListener {
+            startActivity(Intent(requireContext(), tela_inicial::class.java))
+            requireActivity().overridePendingTransition(0, 0)
+            requireActivity().finish()
+        }
+
+        conta.setOnClickListener {
+            startActivity(Intent(requireContext(), contas_financeiras::class.java))
+            requireActivity().overridePendingTransition(0, 0)
+            requireActivity().finish()
+        }
+
+        categoria.setOnClickListener {
+            startActivity(Intent(requireContext(), categorias::class.java))
+            requireActivity().overridePendingTransition(0, 0)
+            requireActivity().finish()
+        }
+
+        transacao.setOnClickListener {
+            startActivity(Intent(requireContext(), lancamentos::class.java))
+            requireActivity().overridePendingTransition(0, 0)
+            requireActivity().finish()
+        }
+
+        return navbar
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment navbar.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            navbar().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }
