@@ -77,7 +77,6 @@ public class TransacaoService {
         transacao.setDataCompra(data.getDataCompra());
         transacao.setDataVencimento(data.getDataVencimento());
         transacao.setTotal(data.getTotal());
-        transacao.setStatus(data.getStatus());
         return repository.save(transacao);
     }
 

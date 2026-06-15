@@ -28,7 +28,7 @@ public class TransacaoController {
         return service.findById(id);
     }
 
-    @GetMapping(value = "/resumidas")
+    @GetMapping(value = "/resumo")
     public List<TransacaoTelaInicialDTO> findAllTransacoesResumidas() {
         return service.transacoesResumidas();
     }

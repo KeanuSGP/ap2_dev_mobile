@@ -1,4 +1,4 @@
 package com.example.ap2_dev_mobile.adapter
 
-class TransacaoAdapter {
+class CategoriaAdapter {
 }
